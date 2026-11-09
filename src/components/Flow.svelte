@@ -97,18 +97,23 @@
 		blockIdx = (blockIdx + delta + run.blocks.length) % run.blocks.length;
 	}
 
-	function togglePlay() {
-		if (timer) {
+	function syncPlay(active) {
+		if (active && !timer) {
+			timer = setInterval(() => {
+				scanT = length ? (scanT + 1) % length : 0;
+			}, 700);
+		}
+		if (!active && timer) {
 			clearInterval(timer);
 			timer = null;
-			playing = false;
-			return;
 		}
-		playing = true;
-		timer = setInterval(() => {
-			scanT = length ? (scanT + 1) % length : 0;
-		}, 700);
 	}
+
+	function togglePlay() {
+		playing = !playing;
+	}
+
+	$: syncPlay(playing);
 
 	const FOCUS = {
 		patches: "patches",

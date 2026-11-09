@@ -23,7 +23,8 @@ export const GROUPS = {
 	cover: ["readmap", "probs"],
 	why: ["why"],
 	mech: ["mech"],
-	factors: ["factors"]
+	factors: ["factors"],
+	stage: ["stage", "input", "probs"]
 };
 
 export function hot(focus, column) {
@@ -181,6 +182,12 @@ export const PAGES = [
 		title: "The step, the token, the gate",
 		focus: "mech",
 		html: `<p>The keep fraction <strong>exp(Δ A)</strong> is taken from this block and applied to a unit pulse. No decay never lets go of the first pulse. Forgetting half drops it immediately. The three grids show a class token at the start, the middle, and the end: a scan cannot jump, so the middle is the short carry. The last card reruns the picture with the gate removed and with the convolution removed.</p>`
+	},
+	{
+		id: "stage",
+		title: "Watch it move",
+		focus: "stage",
+		html: `<p>The pen classifies while you draw. <strong>Mix</strong> blends two shapes and the scores follow the slider. <strong>Play depth</strong> keeps only the first blocks, one frame at a time, so you can see the class change as blocks are added. The gold square on the picture is the patch the scan is on while it plays.</p>`
 	},
 	{
 		id: "factors",
